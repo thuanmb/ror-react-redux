@@ -1,0 +1,155 @@
+@import './mixin';
+@import './color';
+
+/* MARGINS & PADDINGS */
+@include createPaddingMargin();
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-24 {
+  font-size: 24px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-36 {
+  font-size: 36px;
+}
+
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: auto;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.inline-block {
+  display: inline-block;
+  vertical-align: top;
+  &-middle {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.no-mouse {
+  pointer-events: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.cursor-move {
+  cursor: move;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-grey {
+  color: $grey
+}
+
+.text-grey89 {
+  color: $grey89;
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-error {
+  color: $red;
+}
+
+.icon-grey {
+  color: $grey;
+  &:hover {
+    color: $blacklight;
+  }
+}
+
+.no-gutter {
+  padding-left: 15px;
+  & > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+  }
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.p-r-0 {
+  padding-right: 0;
+}
+
+.p-l-0 {
+  padding-left: 0;
+}
+
+.p-10-40 {
+  padding: 10px 40px;
+}
+
+.p-10-20 {
+  padding: 10px 20px;
+}
+
+.p-40-20 {
+  padding: 40px 20px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.bg-green-light {
+  background-color: $greenlight;
+}
+.bg-green-bold {
+  background-color: $greenbold;
+}
+
+.l-relative {
+  position: relative;
+}

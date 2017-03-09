@@ -1,0 +1,5 @@
+smoke: --tags ~@ignore --tags ~@flaky --tags @smoke-test
+release: --tags ~@flaky --tags ~@ignore
+flaky: --tags @flaky
+perform_flaky: --tags @perform --tags @flaky
+engage_flaky: --tags @engage --tags @flaky

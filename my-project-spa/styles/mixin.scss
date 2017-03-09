@@ -1,0 +1,60 @@
+@mixin tablet-view() {
+  @media only screen  and (min-width : 768px) and (max-width : 992px) {
+    @content ;
+  }
+}
+
+@mixin mobile-view() {
+  @media only screen  and (max-width : 720px) {
+    @content ;
+  }
+}
+
+$prefixes: webkit moz;
+@mixin prefix($declarations) {
+  @each $property, $value in $declarations {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: #{$value};
+    }
+    #{$property}: #{$value};
+  }
+}
+@mixin round($radius) {
+  @include prefix((
+    border-radius: $radius
+  ));
+}
+
+$positions: top right bottom left;
+$positions-class: t r b l;
+$types: margin padding;
+$types-class: m p;
+$step: 5;
+$min-step: 5;
+$max-step: 90;
+@mixin createPaddingMargin() {
+  @each $type in $types {
+    @include setType($type);
+  }
+}
+
+@mixin setType($type) {
+  $i: $max-step;
+  @while $i >= $min-step {
+    @each $pc in $positions-class {
+      .#{nth($types-class, index($types, $type))}-#{$pc}-#{$i} {
+        #{$type}-#{nth($positions, index($positions-class, $pc))}: #{$i}px;
+      }
+    }
+    .#{nth($types-class, index($types, $type))}-#{$i} {
+      #{$type}: #{$i}px;
+    }
+    .#{nth($types-class, index($types, $type))}-sh-#{$i} {
+      #{$type}: #{$i}px 0;
+    }
+    .#{nth($types-class, index($types, $type))}-sv-#{$i} {
+      #{$type}: 0 #{$i}px;
+    }
+    $i: $i - $step;
+  }
+}

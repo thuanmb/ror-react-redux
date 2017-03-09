@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'MyProject'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'My Project'}"}
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = stylesheet_link_tag 'my-project-main-wrapper'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons', media: 'all'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700', media: 'all'
+    = csrf_meta_tags
+  %body.my-project
+    #my-project-container
+      = yield
+    = javascript_include_tag 'my-project-main-wrapper'

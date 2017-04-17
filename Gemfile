@@ -21,7 +21,7 @@ gem 'warden' # for authentication
 gem 'activerecord-import'
 gem 'sidekiq'
 gem 'pundit', '~> 1.1'
-gem 'rails_admin', '~> 1.0'
+gem 'rails_admin', '~> 1.1.1'
 gem 'multi_json'
 gem 'faker'
 
